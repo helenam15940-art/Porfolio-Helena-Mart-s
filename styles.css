@@ -10,7 +10,7 @@
     --border:       #1f1f1f;
     --border-light: #2a2a2a;
     --text:         #e8e4dc;
-    --text-muted:   #6a6a6a;
+    --text-muted:   #afafaf;
     --text-faint:   #333333;
     --accent:       #c8a96e;
     --accent-dim:   #8a6f40;
@@ -445,7 +445,7 @@ ul {
     margin-top: 48px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 14px;
 }
 
