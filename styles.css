@@ -243,8 +243,12 @@ ul {
     grid-column: 1 / -1;
 }
 
-.gallery__item--featured .gallery__video-wrap video {
+.gallery__item--featured .gallery__video-wrap video,
+.gallery__item--featured .gallery__video-wrap iframe {
     aspect-ratio: 16 / 9;
+    width: 100%;
+    border: none;
+    display: block;
 }
 
 .gallery__video-wrap {
