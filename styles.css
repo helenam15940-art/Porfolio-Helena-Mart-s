@@ -143,6 +143,51 @@ ul {
     padding: var(--nav-h) clamp(24px, 8vw, 120px) 0;
     text-align: center;
     position: relative;
+    background: radial-gradient(ellipse at 50% 40%, #1a1a1a 0%, #0a0a0a 70%);
+    overflow: hidden;
+}
+
+/* ── Ilustraciones decorativas ─── */
+.hero__deco {
+    position: absolute;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.hero__deco--clapperboard {
+    width: clamp(100px, 14vw, 180px);
+    top: 12%;
+    left: 5%;
+    transform: rotate(-12deg);
+}
+
+.hero__deco--lens {
+    width: clamp(120px, 16vw, 200px);
+    top: 8%;
+    right: 6%;
+    transform: rotate(8deg);
+}
+
+.hero__deco--filmstrip {
+    width: clamp(40px, 5vw, 70px);
+    bottom: 10%;
+    left: 8%;
+    transform: rotate(6deg);
+}
+
+.hero__deco--play {
+    width: clamp(60px, 8vw, 100px);
+    bottom: 14%;
+    right: 8%;
+    transform: rotate(-5deg);
+}
+
+.hero__deco--videocam {
+    width: clamp(90px, 12vw, 160px);
+    bottom: 22%;
+    left: 50%;
+    transform: translateX(-50%) rotate(2deg);
+    opacity: 0.05;
 }
 
 
@@ -164,11 +209,22 @@ ul {
 .hero__name {
     font-family: var(--font-serif);
     font-size: clamp(4rem, 12vw, 9rem);
-    font-weight: 300;
-    line-height: 0.95;
-    letter-spacing: -0.01em;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 36px;
+}
+
+.hero__name-outline {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #e8e4dc;
+    letter-spacing: 0.06em;
+}
+
+.hero__name-fill {
+    display: block;
     color: var(--text);
-    margin-bottom: 32px;
 }
 
 .hero__tagline {
