@@ -265,6 +265,94 @@ ul {
     50%       { opacity: 1;   transform: scaleY(1); }
 }
 
+/* ── Menú hamburguesa (solo móvil) ───────────────────── */
+.nav__checkbox {
+    display: none;
+}
+
+.nav__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    z-index: 110;
+}
+
+.nav__hamburger span {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background: var(--text);
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+/* ── Toggle galería / scroll ─────────────────────────── */
+.view-toggle__input {
+    display: none;
+}
+
+.view-toggle__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 8px 18px;
+    border: 1px solid var(--border-light);
+    cursor: pointer;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: border-color var(--transition), color var(--transition);
+}
+
+.view-toggle__label:hover {
+    border-color: var(--accent);
+    color: var(--text);
+}
+
+.view-toggle__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.view-toggle__icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estado por defecto: galería visible, scroll oculto */
+.view-toggle__icon--scroll,
+.view-toggle__text--scroll {
+    display: none;
+}
+
+.view-toggle__input:checked ~ .view-toggle__label .view-toggle__icon--grid,
+.view-toggle__input:checked ~ .view-toggle__label .view-toggle__text--grid {
+    display: none;
+}
+
+.view-toggle__input:checked ~ .view-toggle__label .view-toggle__icon--scroll,
+.view-toggle__input:checked ~ .view-toggle__label .view-toggle__text--scroll {
+    display: inline-flex;
+}
+
+/* Checkbox controla qué vista se muestra */
+.scroll-feed {
+    display: none;
+}
+
+.view-toggle__input:checked ~ .gallery {
+    display: none;
+}
+
+.view-toggle__input:checked ~ .scroll-feed {
+    display: flex;
+}
+
 /* ── Galería ─────────────────────────────────────────── */
 .gallery-section {
     padding: 100px clamp(20px, 5vw, 64px);
@@ -364,6 +452,66 @@ ul {
     color: var(--accent-dim);
 }
 
+
+/* ── Scroll Feed (TikTok) ────────────────────────────── */
+.scroll-feed {
+    flex-direction: column;
+    align-items: center;
+    max-width: 420px;
+    margin: 0 auto;
+    height: 85vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    gap: 4px;
+    scrollbar-width: none;
+}
+
+.scroll-feed::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-feed__item {
+    flex-shrink: 0;
+    width: 100%;
+    height: 85vh;
+    scroll-snap-align: start;
+    position: relative;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.scroll-feed__item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.scroll-feed__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 20px 24px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.scroll-feed__info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.scroll-feed__info span {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+}
 
 /* ── Sobre mí ────────────────────────────────────────── */
 .about {
@@ -558,22 +706,94 @@ ul {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
-}
 
-@media (max-width: 440px) {
-    .gallery {
-        grid-template-columns: 1fr;
+    /* Hamburguesa visible */
+    .nav__hamburger {
+        display: flex;
+    }
+
+    .nav__links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 260px;
+        height: 100vh;
+        flex-direction: column;
+        background: #0d0d0d;
+        padding: 100px 36px 40px;
+        gap: 28px;
+        transform: translateX(100%);
+        transition: transform var(--transition);
+        border-left: 1px solid var(--border);
+        z-index: 105;
+    }
+
+    .nav__checkbox:checked ~ .nav__links {
+        transform: translateX(0);
+    }
+
+    /* Animación hamburguesa → X */
+    .nav__checkbox:checked ~ .nav__hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+    }
+    .nav__checkbox:checked ~ .nav__hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav__checkbox:checked ~ .nav__hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -4px);
+    }
+
+    .nav__links a {
+        font-size: 0.85rem;
+    }
+
+    /* Hero más compacto */
+    .hero__name {
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+    .hero__deco {
+        opacity: 0.05;
+    }
+
+    /* Contacto */
+    .contact {
+        padding: 80px clamp(24px, 5vw, 40px);
     }
 }
 
-@media (max-width: 540px) {
-    .nav__links {
-        gap: 22px;
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__name {
+        font-size: clamp(2.6rem, 16vw, 4rem);
+    }
+
+    .gallery-section {
+        padding: 60px 12px;
+    }
+
+    .section-header {
+        margin-bottom: 36px;
+    }
+
+    .about {
+        padding: 60px 20px;
+    }
+
+    .contact {
+        padding: 60px 20px;
     }
 
     .footer {
         flex-direction: column;
         gap: 8px;
         text-align: center;
+    }
+
+    .scroll-feed {
+        max-width: 100%;
     }
 }

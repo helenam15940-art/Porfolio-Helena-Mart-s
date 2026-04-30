@@ -13,6 +13,12 @@
     <!-- ─── NAVEGACIÓN ─────────────────────────────────── -->
     <nav class="nav">
         <a href="#inicio" class="nav__logo">HM</a>
+        <input type="checkbox" id="nav-toggle" class="nav__checkbox" aria-label="Abrir menú">
+        <label for="nav-toggle" class="nav__hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
         <ul class="nav__links">
             <li><a href="#trabajo">Trabajo</a></li>
             <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -111,6 +117,19 @@
         <div class="section-header">
             <h2 class="section-title">Porfolio</h2>
             <p class="section-subtitle">Una selección de trabajos recientes</p>
+
+            <!-- Toggle galería / scroll -->
+            <input type="checkbox" id="view-toggle" class="view-toggle__input">
+            <label for="view-toggle" class="view-toggle__label">
+                <span class="view-toggle__icon view-toggle__icon--grid">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                </span>
+                <span class="view-toggle__icon view-toggle__icon--scroll">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18" stroke-linecap="round" stroke-width="3"/></svg>
+                </span>
+                <span class="view-toggle__text view-toggle__text--grid">Galería</span>
+                <span class="view-toggle__text view-toggle__text--scroll">Scroll</span>
+            </label>
         </div>
 
         <div class="gallery">
@@ -281,6 +300,101 @@
             </div>
 
         </div>
+
+        <!-- Vista Scroll tipo TikTok -->
+        <div class="scroll-feed">
+            <div class="scroll-feed__item">
+                <video controls preload="metadata" playsinline>
+                    <source src="video-gallery/VIDEO1.mp4" type="video/mp4">
+                </video>
+                <div class="scroll-feed__info">
+                    <h3>La challenge . Motorrad</h3>
+                    <span>Reportaje RRSS</span>
+                </div>
+            </div>
+            <div class="scroll-feed__item">
+                <video controls preload="metadata" playsinline>
+                    <source src="video-gallery/VIDEO2.mp4" type="video/mp4">
+                </video>
+                <div class="scroll-feed__info">
+                    <h3>Rayo Verde tienda vintage</h3>
+                    <span>Video RRSS</span>
+                </div>
+            </div>
+            <div class="scroll-feed__item">
+                <video controls preload="metadata" playsinline>
+                    <source src="video-gallery/VIDEO3.mp4" type="video/mp4">
+                </video>
+                <div class="scroll-feed__info">
+                    <h3>Rayo Verde tienda vintage</h3>
+                    <span>Video RRSS</span>
+                </div>
+            </div>
+            <div class="scroll-feed__item">
+                <video controls preload="metadata" playsinline>
+                    <source src="video-gallery/VIDEO4.mp4" type="video/mp4">
+                </video>
+                <div class="scroll-feed__info">
+                    <h3>Rayo Verde tienda vintage</h3>
+                    <span>Video RRSS</span>
+                </div>
+            </div>
+            <div class="scroll-feed__item">
+                <video controls preload="metadata" playsinline>
+                    <source src="video-gallery/VIDEO5.mp4" type="video/mp4">
+                </video>
+                <div class="scroll-feed__info">
+                    <h3>Motorrad . Presentación de la R1300R</h3>
+                    <span>Video RRSS</span>
+                </div>
+            </div>
+            <div class="scroll-feed__item">
+                <video controls preload="metadata" playsinline>
+                    <source src="video-gallery/VIDEO6.mp4" type="video/mp4">
+                </video>
+                <div class="scroll-feed__info">
+                    <h3>BMW Celtamotor. Entrevista a Willy Rex</h3>
+                    <span>Video entrevista RRSS</span>
+                </div>
+            </div>
+            <div class="scroll-feed__item">
+                <video controls preload="metadata" playsinline>
+                    <source src="video-gallery/VIDEO7.mp4" type="video/mp4">
+                </video>
+                <div class="scroll-feed__info">
+                    <h3>Motorrad. Presentación F900R 2025</h3>
+                    <span>Video RRSS</span>
+                </div>
+            </div>
+            <div class="scroll-feed__item">
+                <video controls preload="metadata" playsinline>
+                    <source src="video-gallery/VIDEO8.mp4" type="video/mp4">
+                </video>
+                <div class="scroll-feed__info">
+                    <h3>Rayo Verde tienda vintage</h3>
+                    <span>Video RRSS</span>
+                </div>
+            </div>
+            <div class="scroll-feed__item">
+                <video controls preload="metadata" playsinline>
+                    <source src="video-gallery/VIDEO9.mp4" type="video/mp4">
+                </video>
+                <div class="scroll-feed__info">
+                    <h3>Mazda Resnova Motor</h3>
+                    <span>Video RRSS</span>
+                </div>
+            </div>
+            <div class="scroll-feed__item">
+                <video controls preload="metadata" playsinline>
+                    <source src="video-gallery/VIDEO11.mp4" type="video/mp4">
+                </video>
+                <div class="scroll-feed__info">
+                    <h3>MINI Celtamotor. Recepción Express</h3>
+                    <span>Video RRSS</span>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <!-- ─── SOBRE MÍ ───────────────────────────────────── -->
