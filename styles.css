@@ -389,6 +389,32 @@ ul {
 }
 
 
+/* Botón pantalla completa (solo móvil) */
+.gallery__fullscreen-btn {
+    display: none;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5;
+    padding: 0;
+}
+
+.gallery__fullscreen-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 2;
+}
+
 /* ── Sobre mí ────────────────────────────────────────── */
 .about {
     background: var(--surface);
@@ -580,7 +606,21 @@ ul {
 
 @media (max-width: 720px) {
     .gallery {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+    }
+
+    .gallery__info {
+        display: none;
+    }
+
+    .gallery__item--featured .gallery__video-wrap iframe {
+        aspect-ratio: 16 / 9;
+    }
+
+    /* Botón pantalla completa */
+    .gallery__fullscreen-btn {
+        display: flex;
     }
 
     /* Hamburguesa visible */
@@ -640,7 +680,7 @@ ul {
 
 @media (max-width: 480px) {
     .gallery {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .hero__name {
